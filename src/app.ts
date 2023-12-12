@@ -1,3 +1,10 @@
 import { yarg } from "./plugins/args.plugin";
 
-console.log(yarg)
+
+(async () => {
+    await main()
+})()
+
+async function main() {
+    console.log(yarg)
+}
