@@ -17,7 +17,20 @@ export const yarg = yargs(process.argv)
 		type: 'boolean',
 		default: false,
 		describe: 'Show the multiplication table'
-	}).check((argv, options) => {
+	})
+	.option('n', {
+		alias: 'name',
+		type: 'string',
+		default: 'multiplication-table',
+		describe: 'Name of the file to save the multiplication table'
+	})
+	.option('d', {
+		alias: 'destination',
+		type: 'string',
+		default: 'outputs',
+		describe: 'Destination of the file to save the multiplication table'
+	})
+	.check((argv, options) => {
 
 		if (isNaN(argv.b)) throw 'The base must be a number'
 		if (argv.b < 1) throw 'The base must be a greater than 0'
