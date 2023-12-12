@@ -17,5 +17,12 @@ export const yarg = yargs(process.argv)
 		type: 'boolean',
 		default: false,
 		describe: 'Show the multiplication table'
+	}).check((argv, options) => {
+
+		if (isNaN(argv.b)) throw 'The base must be a number'
+		if (argv.b < 1) throw 'The base must be a greater than 0'
+		if (isNaN(argv.l)) throw 'The limit must be a number'
+
+		return true;
 	})
 	.parseSync()
