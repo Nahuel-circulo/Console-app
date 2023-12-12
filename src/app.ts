@@ -1,2 +1,3 @@
-const message = "Hola Mundo!"
-console.log(message)
+import { yarg } from "./plugins/args.plugin";
+
+console.log(yarg)
