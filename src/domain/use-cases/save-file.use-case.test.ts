@@ -3,7 +3,6 @@ import { SaveFile } from './save-file.use-case';
 
 
 
-
 describe('SaveFileUseCase', () => {
 
   const customOptions = {
@@ -19,14 +18,14 @@ describe('SaveFileUseCase', () => {
   // });
 
 
-/*   afterEach(() => {
-    const outputFolderExists = fs.existsSync('outputs');
+  afterEach(() => {
+/*     const outputFolderExists = fs.existsSync('outputs');
     if ( outputFolderExists ) fs.rmSync('outputs', { recursive: true });
-      
+       */
     const customOutputFolderExists = fs.existsSync(customOptions.fileDestination);
     if ( customOutputFolderExists ) fs.rmSync(customOptions.fileDestination, { recursive: true });
     
-  }); */
+  });
 
   test('should save file with default values', () => {
 

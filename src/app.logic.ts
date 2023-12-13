@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { yarg } from './plugins/args.plugin';
+import { yarg } from './config/plugins/args.plugin';
 
 const { b: base, l: limit, s: showTable } = yarg
 

@@ -1,6 +1,6 @@
 import { CreateTable } from '../domain/use-cases/create-table.use-case';
 import { SaveFile } from '../domain/use-cases/save-file.use-case';
-import { ServerApp } from './server.app';
+import { ServerApp } from './server-app';
 
 
 describe('Server App', () => {
