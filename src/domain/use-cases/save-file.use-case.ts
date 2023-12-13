@@ -1,5 +1,4 @@
-
-import fs from 'fs'
+import fs from 'fs';
 
 export interface SaveFileUseCase {
   execute: (options: Options) => boolean;
@@ -11,28 +10,28 @@ export interface Options {
   fileName?: string;
 }
 
+
 export class SaveFile implements SaveFileUseCase {
 
   constructor(
-    /* repository: StorageRepository */
+    /** repository: StorageRepository */
   ) { }
 
-  execute({ fileContent, fileDestination = 'outputs', fileName = 'table' }: Options): boolean {
+  execute({ 
+    fileContent, 
+    fileDestination = 'outputs', 
+    fileName = 'table'
+}: Options): boolean {
+
     try {
-
-      // la creacion del archivo deberia estar en un DataSource
       fs.mkdirSync(fileDestination, { recursive: true });
-
-      fs.writeFile(`${fileDestination}/${fileName}.txt`, fileContent, (err) => {
-        if (err) throw err;
-      })
-
+      fs.writeFileSync(`${fileDestination}/${ fileName }.txt`, fileContent );
       return true;
+      
     } catch (error) {
-
-      console.error(error)
+      // console.error(error); // winston
       return false;
-
     }
   }
+
 }
